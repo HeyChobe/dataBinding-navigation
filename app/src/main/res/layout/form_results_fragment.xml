@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.labo1.FormViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:padding="@dimen/default_gap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="@{@string/name_template(viewModel.firstName,viewModel.lastName)}"
+            android:textSize="@dimen/results_size"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/default_gap"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@{@string/age_template(viewModel.age)}"
+            android:textSize="@dimen/results_size"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/default_gap"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@{@string/email_template(viewModel.email)}"
+            android:textSize="@dimen/results_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+</layout>

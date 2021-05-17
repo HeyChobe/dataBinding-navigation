@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.labo1.FormViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/previous_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="&lt;"
+            android:onClick="@{()->viewModel.onPrev()}"
+            android:textSize="@dimen/button_text_size"
+            android:padding="@dimen/default_gap" />
+
+        <ProgressBar
+            android:id="@+id/form_progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:progress="@{viewModel.progress}"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/next_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="&gt;"
+            android:onClick="@{()->viewModel.onNext()}"
+            android:textSize="@dimen/button_text_size"
+            android:padding="@dimen/default_gap" />
+
+
+    </LinearLayout>
+</layout>
